@@ -9,15 +9,16 @@ def map(source_array)
   array
 end
 
-def reduce(source_array, starting_value = nil)
-  if starting_value
-    accum = starting_value
+def reduce(s, sp=nil)
+  if sp
+    accum = sp
     i = 0
   else
-    accum = source_array[0]
+    accum = s[0]
     i = 1
-  while i < source_array.length
-    accum = yield(accum, source_array[i])
+  end
+  while i < s.length
+    accum = yield(accum, s[i])
     i += 1
   end
   accum
