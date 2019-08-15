@@ -9,4 +9,12 @@ def my_own_map(source_array, block)
   return array
 end
 
-my_own_map()
+def map(source_array)
+  array = []
+  i = 0
+  while i < source_array.length
+    array.push(yield(source_array[i]))
+    i += 1
+  end
+  array
+end
